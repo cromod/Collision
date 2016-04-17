@@ -16,7 +16,7 @@ class Ball:
     self._velocity = self._vafter
     
   def computeEnergy(ballList):
-    return ball._mass*np.linalg.norm(ball._velocity)**2
+    return self._mass*np.linalg.norm(self._velocity)**2
   
   def computeColl(self, ball, step, wlength):
     m1 = self._mass
