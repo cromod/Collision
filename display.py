@@ -28,15 +28,12 @@ def stop(event):
 
 def animation(ball_list, draw_list, canvas, step, wlength):
     flag = True
-    i = 0
     while(flag):
         solver.solve_step(ball_list,step,wlength)
         move(ball_list,draw_list,canvas)
         canvas.update()
         #time.sleep(step)
         #canvas.bind('<KeyPress>', stop)
-        i+=1
-        print i
 
 def run(ball_list, step, wlength):
     window = tk.Tk()
