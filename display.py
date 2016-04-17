@@ -14,26 +14,29 @@ tk.Canvas.coords_circle = _coords_circle
 def draw(ball_list,canvas):
     draw_list = []
     for ball in ball_list:
-        position = ball._position.tolist()
-        draw_list.append(canvas.create_circle(position[0], position[1], ball._radius, fill="white"))
+        position = ball.position.tolist()
+        draw_list.append(canvas.create_circle(position[0], position[1], ball.radius, fill="white"))
     return draw_list
 
 def move(ball_list,draw_list,canvas):
     for i in range(len(ball_list)):
-        position = ball_list[i]._position.tolist()
-        canvas.coords_circle(draw_list[i],position[0], position[1],ball_list[i]._radius)
+        position = ball_list[i].position.tolist()
+        canvas.coords_circle(draw_list[i],position[0], position[1],ball_list[i].radius)
 
 def stop(event):
     canvas.destroy()
 
 def animation(ball_list, draw_list, canvas, step, wlength):
     flag = True
+    i = 0
     while(flag):
-        ball_list = solver.solve_step(ball_list,step,wlength)
+        solver.solve_step(ball_list,step,wlength)
         move(ball_list,draw_list,canvas)
         canvas.update()
-        time.sleep(step)
-        canvas.bind('<KeyPress>', stop)
+        #time.sleep(step)
+        #canvas.bind('<KeyPress>', stop)
+        i+=1
+        print i
 
 def run(ball_list, step, wlength):
     window = tk.Tk()
