@@ -34,8 +34,8 @@ if __name__ == "__main__":
     #ball_list.append(solver.Ball(10., 10., np.array([111.,100.]) , np.array([40.,40.])))
     #ball_list.append(solver.Ball(10., 10., np.array([380.,380.]) , np.array([-20.,-40.])))
     wlength = 400.
-    step = 0.025
-    run(ball_list, step, wlength)
+    step = 0.1
+    display(ball_list, step, wlength)
     
                 
     

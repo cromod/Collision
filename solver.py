@@ -13,8 +13,8 @@ class Ball:
         """
         self.mass = mass
         self.radius = radius
-        self.position = position
-        self.velocity = velocity
+        self.position = np.array(position)
+        self.velocity = np.array(velocity)
         self.vafter = np.copy(velocity) # temporary storage for velocity of next step
 
     def compute_step(self, step):
