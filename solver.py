@@ -43,8 +43,8 @@ class Ball:
     def compute_refl(self, step, size):
         """Compute velocity after hitting an edge.
 
-        step the step of computation
-        size the size of a square edge
+        step the computation step
+        size the medium size
         """
         r, v, x = self.radius, self.velocity, self.position
         projx = step*abs(np.dot(v,np.array([1.,0.])))
