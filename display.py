@@ -58,24 +58,27 @@ def display(balls, step, size):
     """
     # Instanciate the window, canvas and circle objects
     window = tk.Tk()
-    window.poll = True
     canvas = tk.Canvas(window, width=size, height=size, bg="black")
     canvas.pack()
     canvas.focus_set()
     drawing = create(balls, canvas)
+    started = [False]
     # Define functions to launch and stop the simulation
+    def start():
+        """Start the animation"""
+        if not started[0]:
+            started[0] = True
+            animate()
     def animate():
         """Animate the drawing items"""
-        if window.poll:
+        if started[0]:
             update(drawing, canvas, step, size)
             window.after(0, animate)
-        else:
-            window.poll = True
     def stop():
         """Stop the animation"""
-        window.poll = False
+        started[0] = False
     # Define the buttons used to launch and stop the simulation
-    start_button = tk.Button(window, text="Start", command=animate)
+    start_button = tk.Button(window, text="Start", command=start)
     stop_button = tk.Button(window, text="Pause", command=stop)
     start_button.pack()
     stop_button.pack()
