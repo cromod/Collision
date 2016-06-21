@@ -19,7 +19,7 @@ if __name__ == "__main__":
     balls = init_list(10)
     size = 400.
     step = 0.1
-    display(balls, step, size)
+    Display(balls, step, size)
     
                 
     
