@@ -83,5 +83,5 @@ class Display:
 if __name__ == "__main__":
     balls = [solver.Ball(20., 20., [40.,40.], [5.,5.]), solver.Ball(10., 10., [480.,480.], [-15.,-15.]), solver.Ball(15., 15., [30.,470.], [10.,-10.])]
     size = 500.
-    step = 0.1
+    step = 0.01
     Display(balls, step, size)

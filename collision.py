@@ -18,7 +18,7 @@ def init_list(N):
 if __name__ == "__main__":
     balls = init_list(10)
     size = 400.
-    step = 0.1
+    step = 0.02
     Display(balls, step, size)
     
                 
